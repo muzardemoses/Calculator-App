@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Frontend Mentor - Calculator app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- See the size of the elements adjust based on their device's screen size
+- Perform mathmatical operations like addition, subtraction, multiplication, and division
+- Adjust the color theme based on their preference
+- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./Calculator.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## My process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Built with
 
-## Learn More
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I learned
 
-### Code Splitting
+I learned how to use the `prefers-color-scheme` media query to check if the user has a dark theme preference set in their browser. I also learned how to save the user's theme preference in the browser using `localStorage`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```css
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(235, 21%, 11%);
+    color: hsl(234, 39%, 85%);
+  }
+}
+```
 
-### Analyzing the Bundle Size
+```js
+const themeToggle = document.querySelector('#theme-toggle');
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  if (document.body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
 
-### Making a Progressive Web App
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-theme');
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+I want to continue to learn more about React and how to use it to build more complex applications.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Useful resources
 
-### `npm run build` fails to minify
+- [How to use prefers-color-scheme](https://css-tricks.com/introduction-use-media-prefers-color-scheme/) - This helped me understand how to use the `prefers-color-scheme` media query. I really liked this article because it's simple and easy to understand, and it gave me everything I needed to know about this topic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+- GitHub - [@MuzardeMoses](https://github.com/MuzardeMoses)
+- Frontend Mentor - [@muzardemoses](https://www.frontendmentor.io/profile/muzardemoses)
+- Twitter - [@Muzarde1](https://www.twitter.com/Muzarde1)
+- LinkedIn - [Moses Adebayo](https://www.linkedin.com/in/muzardemoses/)
+- Instagram - [@muzardemoses](https://www.instagram.com/ademuzardemoses/)
+- Facebook - [Adebayo MuzardeMoses Olaoluwa ](https://facebook.com/ademuzardemoses)
+- YouTube - [MuzardeMoses](https://www.youtube.com/channel/UCg4W7cbWu6dW_8oJEHWaP9w)
+
+
+## Acknowledgments
+
+
+I want to thank [AltSchool Africa](https://www.altschoolafrica.com/) for giving me the opportunity to learn and improve my skills as a developer. 
+
+I also want to thank [Frontend Mentor](https://www.frontendmentor.io/) for providing me with the opportunity to practice my skills and improve my portfolio.
