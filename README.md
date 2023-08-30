@@ -1,5 +1,7 @@
 # Frontend Mentor - Calculator app solution
 
+The **Calculator App** is a React JS web application that offers a basic calculator interface with arithmetic operations. It features three theme toggle options for a personalized visual experience. Users can perform calculations, switch themes, and enjoy a user-friendly interface.
+
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
